@@ -1,21 +1,24 @@
 const axios = require('axios');
 
-const getApiPokemon = async () => {
+//Creo la funcion
+const getApiPokemon = async (req, res) => {
+	//Array para guardar los pokes
 	let pokeArray = [];
 
 	try {
+		//Busco todos los 40 pokes
 		const pokeJson = await axios('https://pokeapi.co/api/v2/pokemon?offset=00&limit=40');
-		
-		const resultsPokesApis = pokeJson.data.results;
+		const resultsPokesApi = pokeJson.data.results;
 
-		for(var i = 0; i < resultsPokesApis.length; i++){
-			const objAux = await axios(resultsPokesApis[i].url);
+		//Creo un objeto por cada poke con los stats 
+		for(var i = 0; i < resultsPokesApi.length; i++){
+			const objAux = await axios(resultsPokesApi[i].url);
 			
 			let pokeObj = {
-				name: resultsPokes[i].name,
+				name: resultsPokesApi[i].name,
 				height: objAux.data.height,
 				id: objAux.data.id,
-				sprite: objAux.data.sprites.other.dream_world.front_default,
+				sprite: objAux.data.sprites.other['official-artwork'].front_default,
 				hp: objAux.data.stats[0].base_stat,
 				attack : objAux.data.stats[1].base_stat,
 				defense: objAux.data.stats[2].base_stat,
@@ -25,17 +28,21 @@ const getApiPokemon = async () => {
 				weight: objAux.data.weight,
 			}
 
-			if(objAux.data.types.length === 1) pokeObj.type = [objAux.data.types[0].type.name];
+			//Hago un array con el o los tipos
+			if(objAux.data.types.length === 1) pokeObj.types = [objAux.data.types[0].type.name];
 
-			else pokeObj.type = [objAux.data.types[0].type.name, objAux.data.types[1].type.name];
+			else pokeObj.types = [objAux.data.types[0].type.name, objAux.data.types[1].type.name];
 
+			//Pusheo los Objs
 			pokeArray.push(pokeObj);
 		}
 
-		console.log(pokeArray)
+		//Muestro los pokes
+		res.send(pokeArray)
 	}
-	catch(e) {
-		console.log(e);
+
+	catch(error) {
+		res.status(501).send(error);
 	}
 }
 

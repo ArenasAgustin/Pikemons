@@ -9,11 +9,13 @@ module.exports = (sequelize) => {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true
     },
 
     //Id del Pokemon
-    idPokemon: {
+    id: {
       type: DataTypes.INTEGER,
+      autoIncrement: true,
       primaryKey: true
     },
 
@@ -67,7 +69,9 @@ module.exports = (sequelize) => {
 
     //Imagen del Pokemon
     sprite: {
-      type: DataTypes.STRING
+      type: DataTypes.TEXT,
+      validate: { isUrl: true },
+      defaultValue: 'https://wiki.p-insurgence.com/images/0/09/722.png'      
     }
   });
 };
