@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 //Creo la funcion
-const getApiPokemon = async (req, res) => {
+const getApiPokemon = async () => {
 	//Array para guardar los pokes
 	let pokeArray = [];
 
@@ -26,6 +26,7 @@ const getApiPokemon = async (req, res) => {
 				special_defense: objAux.data.stats[4].base_stat,
 				speed: objAux.data.stats[2].base_stat,
 				weight: objAux.data.weight,
+				origin: "api"
 			}
 
 			//Hago un array con el o los tipos
@@ -38,11 +39,11 @@ const getApiPokemon = async (req, res) => {
 		}
 
 		//Muestro los pokes
-		res.send(pokeArray)
+		return pokeArray;
 	}
 
 	catch(error) {
-		res.status(501).send(error);
+		return error;
 	}
 }
 

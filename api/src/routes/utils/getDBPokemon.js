@@ -1,7 +1,7 @@
 const { Pokemon, Type } = require('../../db.js')
 
 //Creo la funcion
-const getDBPokemon = async (req, res) => {
+const getDBPokemon = async () => {
 	//Array para guardar los pokes
 	let pokeArray = [];
 
@@ -27,6 +27,7 @@ const getDBPokemon = async (req, res) => {
 				special_defense: resultsPokesDB[i].special_defense,
 				speed: resultsPokesDB[i].speed,
 				weight: resultsPokesDB[i].weight,
+				origin: "db"
 			}
 
 			//Hago un array con el o los tipos
@@ -39,11 +40,11 @@ const getDBPokemon = async (req, res) => {
 		}
 
 		//Muestro los pokes
-		res.send(pokeArray);
+		return pokeArray;
 	}
 
 	catch(error) {
-		res.status(501).send(error);
+		return error;
 	}
 }
 

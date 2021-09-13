@@ -27,6 +27,7 @@ const getByID = async (req, res) => {
 					special_defense: auxPokeDB.special_defense,
 					speed: auxPokeDB.speed,
 					weight: auxPokeDB.weight,
+					origin: "db"
 				}
 				console.log(pokeDB)
 
@@ -56,6 +57,7 @@ const getByID = async (req, res) => {
 				special_defense: auxPokeApi.data.stats[4].base_stat,
 				speed: auxPokeApi.data.stats[2].base_stat,
 				weight: auxPokeApi.data.weight,
+				origin: "api"
 			}
 
 			if(auxPokeApi.data.types.length === 1) pokeApi.types = [auxPokeApi.data.types[0].type.name];

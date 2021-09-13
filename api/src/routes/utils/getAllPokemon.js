@@ -3,20 +3,13 @@ const getDBPokemon = require('./getDBPokemon');
 
 const getAllPokemon = async (req, res) => {
 	try {
-		let resultsPokesApi = await getApiPokemon(req, res);
-		let resultsPokesDB = await getDBPokemon(req, res);
-
-		console.log(resultsPokesApi);
-		console.log(resultsPokesDB);
-
-		let allPokemons = await resultsPokesDB.concat(resultsPokesApi);
-		console.log(allPokemons);
-
-		res.send(allPokemons);
+		let resultsPokesApi = await getApiPokemon();
+		let resultsPokesDB = await getDBPokemon();
+		
+		res.send([...resultsPokesApi, ...resultsPokesDB]); //allPokemons
 	}
 
 	catch(error) {
-		console.log(error)
 		res.status(501).send(error);
 	}
 }

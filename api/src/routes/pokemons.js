@@ -8,10 +8,24 @@ const {
 router.post('/', createPokemon);
 
 //Busco todos los pokes creados
-router.get('/news', getDBPokemon);
+router.get('/news', async (req, res) => {
+	try {
+		res.send(await getDBPokemon());
+	}
+	catch (e) {
+		res.status(501).send(error);
+	}
+});
 
 //Busco todos los pokes de la api
-router.get('/api', getApiPokemon);
+router.get('/api', async (req, res) => {
+	try {
+		res.send(await getApiPokemon());
+	}
+	catch (e) {
+		res.status(501).send(error);
+	}
+});
 
 //Busco 40 pokes de la api y los pokes credos
 router.get('/', getAllPokemon);
