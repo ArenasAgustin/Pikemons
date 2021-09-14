@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';
 import NavBar from '../components/navbar/NavBar.jsx';
@@ -6,6 +6,8 @@ import NavBar from '../components/navbar/NavBar.jsx';
 function App() {
   return (
     <div className="App">
+      <NavBar />
+
       <Route
         path='/'
         render={() => <Nav onSearch={onSearch} />}
