@@ -15,17 +15,9 @@ const getByName = async (req, res) => {
 		//Creo objeto
 		if(auxPokeDB){
 			let pokeDB = {
-				name: auxPokeDB.name,
-				height: auxPokeDB.height,
+				name,
 				id: auxPokeDB.id,
 				sprite: auxPokeDB.sprite,
-				hp: auxPokeDB.hp,
-				attack : auxPokeDB.attack,
-				defense: auxPokeDB.defense,
-				special_attack: auxPokeDB.special_attack,
-				special_defense: auxPokeDB.special_defense,
-				speed: auxPokeDB.speed,
-				weight: auxPokeDB.weight,
 				origin: "db"
 			}
 
@@ -43,16 +35,8 @@ const getByName = async (req, res) => {
 			//Creo objeto
 			let pokeApi = {
 				name,
-				height: auxPokeApi.data.height,
 				id: auxPokeApi.data.id,
 				sprite: auxPokeApi.data.sprites.other['official-artwork'].front_default,
-				hp: auxPokeApi.data.stats[0].base_stat,
-				attack : auxPokeApi.data.stats[1].base_stat,
-				defense: auxPokeApi.data.stats[2].base_stat,
-				special_attack: auxPokeApi.data.stats[3].base_stat,
-				special_defense: auxPokeApi.data.stats[4].base_stat,
-				speed: auxPokeApi.data.stats[2].base_stat,
-				weight: auxPokeApi.data.weight,
 				origin: "api"
 			}
 

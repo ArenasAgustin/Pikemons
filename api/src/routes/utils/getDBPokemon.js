@@ -17,16 +17,8 @@ const getDBPokemon = async () => {
 		for(var i = 0; i < resultsPokesDB.length; i++){
 			let pokeObj = {
 				name: resultsPokesDB[i].name,
-				height: resultsPokesDB[i].height,
 				id: resultsPokesDB[i].id,
 				sprite: resultsPokesDB[i].sprite,
-				hp: resultsPokesDB[i].hp,
-				attack : resultsPokesDB[i].attack,
-				defense: resultsPokesDB[i].defense,
-				special_attack: resultsPokesDB[i].special_attack,
-				special_defense: resultsPokesDB[i].special_defense,
-				speed: resultsPokesDB[i].speed,
-				weight: resultsPokesDB[i].weight,
 				origin: "db"
 			}
 

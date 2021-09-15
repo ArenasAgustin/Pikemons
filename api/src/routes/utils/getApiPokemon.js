@@ -16,16 +16,8 @@ const getApiPokemon = async () => {
 			
 			let pokeObj = {
 				name: resultsPokesApi[i].name,
-				height: objAux.data.height,
 				id: objAux.data.id,
 				sprite: objAux.data.sprites.other['official-artwork'].front_default,
-				hp: objAux.data.stats[0].base_stat,
-				attack : objAux.data.stats[1].base_stat,
-				defense: objAux.data.stats[2].base_stat,
-				special_attack: objAux.data.stats[3].base_stat,
-				special_defense: objAux.data.stats[4].base_stat,
-				speed: objAux.data.stats[2].base_stat,
-				weight: objAux.data.weight,
 				origin: "api"
 			}
 

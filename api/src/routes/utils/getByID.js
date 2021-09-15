@@ -18,7 +18,7 @@ const getByID = async (req, res) => {
 				let pokeDB = {
 					name: auxPokeDB.name,
 					height: auxPokeDB.height,
-					id: auxPokeDB.id,
+					id: id,
 					sprite: auxPokeDB.sprite,
 					hp: auxPokeDB.hp,
 					attack : auxPokeDB.attack,
@@ -46,9 +46,9 @@ const getByID = async (req, res) => {
 
 			//Creo objeto
 			let pokeApi = {
-				name: auxPokeApi.data.species.name,
+				name: auxPokeApi.data.name,
 				height: auxPokeApi.data.height,
-				id: auxPokeApi.data.id,
+				id: id,
 				sprite: auxPokeApi.data.sprites.other['official-artwork'].front_default,
 				hp: auxPokeApi.data.stats[0].base_stat,
 				attack : auxPokeApi.data.stats[1].base_stat,
