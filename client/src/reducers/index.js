@@ -8,10 +8,10 @@ const initialState = {
     pokemonDetail: {},
     pokemonSearch: {},
     typesArray: [],
-    newPokemon: []
+    newPokemon: {}
 };
 
-const rootReducer = (state = initialState, {type, payload}) => {
+export const rootReducer = (state = initialState, {type, payload}) => {
 	switch(type){
 		case ADD_POKEMON:
 			return {

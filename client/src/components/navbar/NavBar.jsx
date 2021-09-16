@@ -1,20 +1,33 @@
 import React from 'react';
-import SearchBar from './SearchBar.jsx';
 import { Link } from 'react-router-dom';
+import SearchBar from '../searchBar/SearchBar';
 
-function NavBar({onSearch}) {
+const NavBar = () => {
   return (
-    <nav className={}>
-        <a href = "../home" className = {}>
-          	<h2 className = {styleNav.home}>Henry Wather App</h2> 
-        </a>
+    <nav>
+      <div>
+        <img src="" alt=""/>
+      </div>
 
-        <SearchBar
-          	onSearch={onSearch}
-          	className={}
-        />
+      <div>
+        <SearchBar/>
+      </div>
+
+      <div>
+        <div>
+          <Link to="/home">
+            <h2>Home</h2> 
+          </Link>
+        </div>
+
+        <div>
+          <Link to="/createpokemon">
+            <h2>Create Pokemon</h2> 
+          </Link>
+        </div>
+      </div> 
     </nav>
   );
 };
 
-export default Nav;
+export default NavBar;
