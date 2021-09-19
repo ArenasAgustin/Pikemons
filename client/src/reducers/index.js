@@ -49,6 +49,6 @@ export const rootReducer = (state = initialState, {type, payload}) => {
 				typesArray: payload
 			};
 		default:
-			return;
+			return state;
 	}
 }

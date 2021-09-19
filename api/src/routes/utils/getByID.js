@@ -3,10 +3,10 @@ const { Pokemon, Type } = require('../../db.js');
 
 const getByID = async (req, res) => {
 	const { idPokemon: id } = req.params;
-	const { db: dataBase } = req.query;
+	const { origin } = req.query;
 
 	try {
-		if(dataBase === 'db' || !dataBase){
+		if(origin === 'db'){
 			//Busco en DB
 			const auxPokeDB = await Pokemon.findByPk(
 				id ,
@@ -40,7 +40,7 @@ const getByID = async (req, res) => {
 			}
 		}
 
-		else if(dataBase === 'api'){
+		else if(origin === 'api' || !origin){
 			//Busco en la Api
 			const auxPokeApi = await axios(`https://pokeapi.co/api/v2/pokemon/${id}`);
 

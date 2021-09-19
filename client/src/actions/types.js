@@ -4,7 +4,7 @@ export const GET_TYPES = 'GET_TYPES';
 
 export const getTypes = () => {
 	return async (dispatch) => {
-		const typesArray = await axios('http://localhost:3001/pokemons');
+		const typesArray = await axios('http://localhost:3001/types');
 
 		dispatch({ type: 'GET_TYPES', payload: typesArray})
 	}

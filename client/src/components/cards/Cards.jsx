@@ -1,7 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Card from '../card/Card';
 
-function Card(argument){
-}
-
-export default Card;
+export default function Cards({pArr}){
+	return(
+		<div>
+			{
+				pArr.map(poke => <Card 
+						key={poke.id}
+						id={poke.id}
+						name={poke.name}
+						sprite={poke.sprite}
+						types={poke.types}
+						origin={poke.origin}
+					/>)
+			}
+		</div>
+	)
+};

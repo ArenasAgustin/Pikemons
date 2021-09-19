@@ -25,6 +25,28 @@ conn.sync({ force: true }).then(() => {
   server.listen(3001, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
 
+    const arrTypes = [
+      'bug',
+      'dark',
+      'dragon',
+      'electric',
+      'fairy',
+      'fighting',
+      'fire',
+      'flying',
+      'ghost',
+      'grass',
+      'ground',
+      'ice',
+      'normal',
+      'poison',
+      'psychic',
+      'rock',
+      'steel',
+      'water'
+    ]
+
+    const modelArrTypes = arrTypes.map(type => Type.create({name: type}))
     // //Creo 2 tipos para Tests
     // var type1 = Type.create({
     //   name: 'fire'
@@ -33,23 +55,9 @@ conn.sync({ force: true }).then(() => {
     //   name: 'dragon'
     // })
 
-    // //Creo 2 pokes para Tests
-    // var poke1 = Pokemon.create({
-    //   name: 'Charizard'
-    // })
-    // var poke2 = Pokemon.create({
-    //   name: 'Draagonite'
-    // })
-
-    // //Conecto los tipos con los pokes para Tests
-    // async () => {
-    //   await poke1.setTypes([type1]);
-    //   await poke2.setTypes([type2]);
-    // }
-
-    // Promise.all([type1, type2, poke1, poke2]) //
-    //   .then(res => {
-    //     console.log("Categorías precargadas");
-    //   });
+    Promise.all(modelArrTypes) //
+      .then(res => {
+        console.log("Categorías precargadas");
+      });
   });
 });

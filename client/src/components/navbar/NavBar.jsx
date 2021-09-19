@@ -21,7 +21,7 @@ const NavBar = () => {
         </div>
 
         <div>
-          <Link to="/createpokemon">
+          <Link to="/create">
             <h2>Create Pokemon</h2> 
           </Link>
         </div>
