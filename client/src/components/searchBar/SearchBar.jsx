@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { getPokemonSearch } from '../../actions/pokemon';
 
 function SearchBar(){
+	const dispatch = useDispatch();
 	const [name, setName] = useState('');
 
 	function handleChange(event){
@@ -10,6 +13,7 @@ function SearchBar(){
 
 	function handleSubmit(event){
 		event.preventDefault();
+		dispatch(getPokemonSearch(name));
 		setName('');
 	}
 
@@ -22,7 +26,7 @@ function SearchBar(){
 				onChange={e => handleChange(e)}
 			/>
 
-			<Link to={`/pokemon/${name}`}>
+			<Link to={`/search`}>
 				<button type="submit">Search</button>
 			</Link>
 		</form>
