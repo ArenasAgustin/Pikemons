@@ -43,7 +43,8 @@ conn.sync({ force: true }).then(() => {
       'psychic',
       'rock',
       'steel',
-      'water'
+      'water',
+      '???'
     ]
 
     const modelArrTypes = arrTypes.map(type => Type.create({name: type}))

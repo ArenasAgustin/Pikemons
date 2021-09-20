@@ -2,12 +2,12 @@ const { Pokemon, Type } = require('../../db.js');
 
 const createPokemon = async (req, res) => {
 	const { 
-		name, nameTypes, hp, attack, defense, special_attack, special_defense, speed, height, weight, sprite 
+		name, types, hp, attack, defense, special_attack, special_defense, speed, height, weight, sprite 
 	} = req.body;
 
 	try {
 		//Busco el type
-		const typesArr = await Promise.all(nameTypes.map(name => Type.findOne({where: { name } })))
+		const typesArr = await Promise.all(types.map(name => Type.findOne({where: { name } })))
 
 		//Creo el poke
 		const poke = await Pokemon.create({

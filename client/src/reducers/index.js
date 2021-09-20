@@ -6,7 +6,7 @@ import { GET_TYPES } from "../actions/types.js";
 const initialState = {
     pokemonsArray: [],
     pokemonDetail: {},
-    pokemonSearch: {},
+    pokemonSearch: [],
     typesArray: [],
     newPokemon: {}
 };

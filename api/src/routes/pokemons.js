@@ -5,7 +5,7 @@ const {
 } = require('./utils/indexUtils');
 
 //Creo el Poke
-router.post('/', createPokemon);
+router.post('/addpokemon', createPokemon);
 
 //Busco todos los pokes creados
 router.get('/news', async (req, res) => {

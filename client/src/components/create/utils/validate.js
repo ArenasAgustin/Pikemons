@@ -26,10 +26,6 @@ export default function validate(input) {
     errors.speed = 'Speed less than 255';
   } 
 
-  if(!input.types.length){
-    errors.types = 'Minimum one type';
-  }
-
   // if(!urlEspresion.test(input.sprite)){
   //   errors.types = 'Minimum one type';
   // }  

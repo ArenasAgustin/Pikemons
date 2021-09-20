@@ -7,24 +7,37 @@ export const GET_POKEMON_SEARCH = 'GET_POKEMON_SEARCH';
 export const REMOVE_DETAIL = 'REMOVE_DETAIL';
 export const REMOVE_SEARCH = 'REMOVE_SEARCH';
 
-// return async function (dispatch){
-//         var p= await fetch(`http://localhost:3001/pokemons`,{
-//             method: 'POST',
-//             headers:{
-//                 'Accept': 'application/json',
-//                 'Content-Type': 'application/json;charset=utf-8'
-//             },
-//             body: JSON.stringify(payload)
-//         });
-//         const res= await p.json();
-//         return dispatch({type:'CREATE_POKEMON', payload: res});
-//     };
-
 export const addPokemon = (poke) => {
 	return async (dispatch) => {
-		const resultPokemon = await axios.post('http://localhost:3001/pokemons/', poke);
+		let types = [poke.type1, poke.type2];
 
-		dispatch({ type: 'ADD_POKEMON', payload: resultPokemon.data})
+		if (types[0] !== '???' && !types[0]) types.shift();
+		if (types[1] !== '???' && !types[1]) types.pop();
+
+		let objAux = {
+			name: poke.name,
+			height: poke.height ? poke.heigh : undefined,
+			sprite: poke.sprite ? poke.sprite : undefined,
+			hp: poke.hp ? poke.hp : undefined,
+			attack : poke.attack ? poke.attack : undefined,
+			defense: poke.defense ? poke.defense : undefined,
+			special_attack: poke.special_attack ? poke.special_attack : undefined,
+			special_defense: poke.special_defense ? poke.special_defense : undefined,
+			speed: poke.speed ? poke.speed : undefined,
+			weight: poke.weight ? poke.weight : undefined,
+			types
+		}
+
+		const resultPokemon = await fetch('http://localhost:3001/pokemons/addpokemon', {
+			method: 'POST',
+			headers: {
+				'Accept': 'application/json',
+                'Content-Type': 'application/json;charset=utf-8'
+			},
+			body: JSON.stringify(objAux)
+		});
+
+		dispatch({ type: 'ADD_POKEMON', payload: resultPokemon.json()})
 	}
 }
 
@@ -32,7 +45,7 @@ export const getPokemons = () => {
 	return async (dispatch) => {
 		const pokemonsArray = await axios('http://localhost:3001/pokemons/');
 
-		dispatch({ type: 'GET_POKEMONS', payload: pokemonsArray.data})
+		return dispatch({ type: 'GET_POKEMONS', payload: pokemonsArray.data})
 	}
 }
 
@@ -40,7 +53,7 @@ export const getPokemonDetail = (id, origin) => {
 	return async (dispatch) => {
 		const pokemon = await axios(`http://localhost:3001/pokemons/${id}?origin=${origin}`);
 
-		dispatch({ type: 'GET_POKEMON_DETAIL', payload: pokemon.data})
+		return dispatch({ type: 'GET_POKEMON_DETAIL', payload: pokemon.data})
 	}
 }
 
@@ -48,18 +61,18 @@ export const getPokemonSearch = (name) => {
 	return async (dispatch) => {
 		const pokemon = await axios(`http://localhost:3001/pokemons/find?name=${name}`);
 
-		dispatch({ type: 'GET_POKEMON_SEARCH', payload: pokemon.data})
+		return dispatch({ type: 'GET_POKEMON_SEARCH', payload: pokemon.data})
 	}
 }
 
 export const removeDetail = () => {
-	return async (dispatch) => {
+	return async (dispatch) => 
 		dispatch({ type: 'REMOVE_DETAIL', payload: []})
-	}
+	
 }
 
 export const removeSeach = () => {
-	return async (dispatch) => {
+	return async (dispatch) => 
 		dispatch({ type: 'REMOVE_SEARCH', payload: []})
-	}
+	
 }
