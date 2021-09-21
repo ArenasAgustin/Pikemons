@@ -31,7 +31,7 @@ export const rootReducer = (state = initialState, {type, payload}) => {
 		case GET_POKEMON_SEARCH:
 			return{
 				...state,
-				pokemonSearch: [...state.pokemonSearch, payload]
+				pokemonSearch: [payload, ...state.pokemonSearch]
 			};
 		case REMOVE_DETAIL:
 			return{

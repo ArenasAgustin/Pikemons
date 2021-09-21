@@ -148,7 +148,6 @@ export default function  Create() {
 
         <div>
           <select name='type1' required onChange={handleInputChange}>
-            <option value='???'> First type </option>
             <option value='bug'> Bug </option>
             <option value='darck'> Darck </option>
             <option value='dragon'> Dragon </option>
@@ -170,7 +169,6 @@ export default function  Create() {
           </select>
 
           <select name='type2' required onChange={handleInputChange}>
-            <option value='???'> Second type </option>
             <option value='bug'> Bug </option>
             <option value='darck'> Darck </option>
             <option value='dragon'> Dragon </option>

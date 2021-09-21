@@ -5,6 +5,7 @@ import Home from './components/home/Home';
 import Landing from './components/landing/Landing';
 import Create from './components/create/Create';
 import SearchPage from './components/searchPage/SearchPage';
+import Loading from './components/loading/Loading';
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
       <Route exact path='/create' component={Create}/>
 
       <Route exact path='/search' component={SearchPage}/>
+
+      <Route exact path='/loading' component={Loading}/>
     </div>
   );
 }

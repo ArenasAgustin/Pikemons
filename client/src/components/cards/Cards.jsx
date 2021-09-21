@@ -1,11 +1,12 @@
 import React from 'react';
 import Card from '../card/Card';
+import './Cards.css'
 
-export default function Cards({pArr}){
+export default function Cards({pokeArrCards}){
 	return(
-		<div>
+		<div className='cardsGrid'>
 			{
-				pArr.map(poke => <Card 
+				pokeArrCards.map(poke => <Card 
 						key={poke.id}
 						id={poke.id}
 						name={poke.name}

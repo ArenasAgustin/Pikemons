@@ -1,0 +1,7 @@
+.cardsGrid{
+	display: grid;
+	grid: 270px / auto auto auto auto;
+	grid-auto-rows: 270px;
+	grid-gap: 20px;
+	padding: 25px;
+}
