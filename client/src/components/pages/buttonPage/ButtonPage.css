@@ -1,0 +1,31 @@
+.pageButtons{
+	list-style: none;
+	display: flex;
+}
+
+.pageButtons li{
+	padding: 10px;
+	border:  1px solid black;
+	cursor: pointer;
+}
+
+.activeButton{
+	background-color: black;
+	color: white;
+}
+
+.btn{
+	background-color: transparent;
+	border: none;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+.btn :hover{
+	background-color: black;
+	color: white;
+}
+
+.btn :focus{
+	outline: none;
+}
