@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import { getPokemonDetail, removeDetail } from '../../actions/pokemon';
+import { getPokemonDetail } from '../../actions/pokemon';
 import NavBar from '../navbar/NavBar';
 import Loading from '../loading/Loading';
 import images from '../img/img';

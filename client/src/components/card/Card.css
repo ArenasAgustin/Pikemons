@@ -1,12 +1,11 @@
 .card{
-	width: 300px;
-	background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapertag.com%2Fwallpaper%2Ffull%2F9%2F2%2Fa%2F572655-pokemon-forest-background-1920x1200-for-desktop.jpg&f=1&nofb=1');
-	background-size: contain;
-	border-radius: 15px;
+	width: 260px;
 }
 
 .backgroundPoke{
-	
+	background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapertag.com%2Fwallpaper%2Ffull%2F9%2F2%2Fa%2F572655-pokemon-forest-background-1920x1200-for-desktop.jpg&f=1&nofb=1');
+	background-size: cover;
+	border-radius: 15px 15px 0px 0px;
 	position: relative;
 }
 
@@ -42,7 +41,7 @@
 
 .cardDescription{
 	background: linear-gradient(120deg, #dddddd 57%, #626262 100%);
-	border-radius: 	15px;
+	border-radius: 0px 0px 15px 15px;
 	display: flex;
 	height: 87px;
 	flex-direction: column;

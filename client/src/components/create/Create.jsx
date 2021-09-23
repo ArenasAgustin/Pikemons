@@ -4,6 +4,8 @@ import { addPokemon } from '../../actions/pokemon';
 import NavBar from '../navbar/NavBar';
 import validate from './utils/validate';
 
+const arrTypes = [ 'bug', 'dark', 'dragon', 'electric', 'fairy', 'fighting', 'fire', 'flying', 'ghost', 'grass', 'ground', 'ice', 'normal', 'poison', 'psychic', 'rock', 'steel', 'water'];
+
 export default function  Create() {
   const dispatch = useDispatch();
   const [input, setInput] = React.useState({
@@ -147,46 +149,16 @@ export default function  Create() {
         </div>
 
         <div>
-          <select name='type1' required onChange={handleInputChange}>
-            <option value='bug'> Bug </option>
-            <option value='darck'> Darck </option>
-            <option value='dragon'> Dragon </option>
-            <option value='electric'> Electric </option>
-            <option value='fairy'> Fairy </option>
-            <option value='fighting'> Fighting </option>
-            <option value='fire'> Fire </option>
-            <option value='flying'> Flying </option>
-            <option value='ghost'> Ghost </option>
-            <option value='grass'> Grass </option>
-            <option value='ground'> Ground </option>
-            <option value='ice'> Ice </option>
-            <option value='normal'> Normal </option>
-            <option value='poison'> Poison </option>
-            <option value='psychic'> Psychic </option>
-            <option value='rock'> Rock </option>
-            <option value='steel'> Steel </option>
-            <option value='water'> Water </option>
+          <select name='type1' onChange={handleInputChange}>
+            {arrTypes.map(type => 
+              <option value={type} key={type}>{`${type[0].toUpperCase()}${type.slice(1)}`}</option>
+            )}
           </select>
 
-          <select name='type2' required onChange={handleInputChange}>
-            <option value='bug'> Bug </option>
-            <option value='darck'> Darck </option>
-            <option value='dragon'> Dragon </option>
-            <option value='electric'> Electric </option>
-            <option value='fairy'> Fairy </option>
-            <option value='fighting'> Fighting </option>
-            <option value='fire'> Fire </option>
-            <option value='flying'> Flying </option>
-            <option value='ghost'> Ghost </option>
-            <option value='grass'> Grass </option>
-            <option value='ground'> Ground </option>
-            <option value='ice'> Ice </option>
-            <option value='normal'> Normal </option>
-            <option value='poison'> Poison </option>
-            <option value='psychic'> Psychic </option>
-            <option value='rock'> Rock </option>
-            <option value='steel'> Steel </option>
-            <option value='water'> Water </option>
+          <select name='type2' onChange={handleInputChange}>
+            {arrTypes.map(type => 
+              <option value={type} key={type}>{`${type[0].toUpperCase()}${type.slice(1)}`}</option>
+            )}
           </select>
         </div>
 

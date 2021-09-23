@@ -2,22 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import NavBar from '../navbar/NavBar';
 import Cards from '../cards/Cards';
+import Pages from '../pages/Pages';
 import SearchBar from '../searchBar/SearchBar';
 
-const countCards = 12;
 export default function SearchPage(){
-	const [ pokeSearched, setPokeSearched ] = useState([]);
 	const pokeArray = useSelector(state => state.pokemonSearch);
+	const [pokeSearch, setPokeSearch] = useState(pokeArray);
 
 	useEffect(() => {
-		setPokeSearched([...pokeArray].splice(0, countCards))
+		setPokeSearch(pokeArray);
 	}, [pokeArray])
 
 	return(
 		<div>
 			<NavBar />
 			<SearchBar/>
-			<Cards pokeArrCards = {pokeSearched}/>
+			<Cards pokeArrCards={pokeArray}/>
 		</div>
 	)
 }

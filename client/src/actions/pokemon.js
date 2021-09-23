@@ -1,11 +1,23 @@
 import axios from 'axios';
 
+const all = 'all';
+const allDefault = 'default';
+const a_Z = 'a-Z'; 
+const z_A = 'z-A';
+const highest_Attack = 'highest_Attack';
+const highest_Defense = 'highest_Defense';
+const highest_Special_Attack = 'highest_Special_Attack';
+const highest_Special_Defense = 'highest_Special_Defense';
+const highest_Speed = 'highest_Speed';
+const highest_Height = 'highest_Height';
+const highest_Weight = 'highest_Weight';
+
 export const ADD_POKEMON = 'ADD_POKEMON';
 export const GET_POKEMONS = 'GET_POKEMONS';
 export const GET_POKEMON_DETAIL = 'GET_POKEMON_DETAIL';
 export const GET_POKEMON_SEARCH = 'GET_POKEMON_SEARCH';
-export const REMOVE_DETAIL = 'REMOVE_DETAIL';
-export const REMOVE_SEARCH = 'REMOVE_SEARCH';
+export const FILTER_TYPE = 'FILTER_TYPE';
+export const FILTER_ORIGIN = 'FILTER_ORIGIN';
 
 export const addPokemon = (poke) => {
 	return async (dispatch) => {
@@ -65,14 +77,12 @@ export const getPokemonSearch = (name) => {
 	}
 }
 
-export const removeDetail = () => {
+export const filterType = (pokemonsArray) => {
 	return async (dispatch) => 
-		dispatch({ type: 'REMOVE_DETAIL', payload: []})
-	
+		dispatch({ type: 'FILTER_TYPE', payload: pokemonsArray})
 }
 
-export const removeSeach = () => {
+export const filterOrigin = (pokemonsArray) => {
 	return async (dispatch) => 
-		dispatch({ type: 'REMOVE_SEARCH', payload: []})
-	
+		dispatch({ type: 'FILTER_ORIGIN', payload: pokemonsArray})
 }

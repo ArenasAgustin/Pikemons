@@ -1,0 +1,27 @@
+.navContainer{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+  	align-content: center;
+  	padding: 0px 20px;
+}
+
+.navContainerButtons{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+  	align-content: center;
+}
+
+.navButtons{
+	text-decoration: none;
+}
+
+.navDivButtons{
+	padding: 	10px;
+}
+
+.navImg{
+	height: 70px;
+	margin: 10px 0px;
+}

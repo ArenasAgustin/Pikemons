@@ -1,7 +1,6 @@
 .cardsGrid{
 	display: grid;
-	grid: 270px / auto auto auto auto;
-	grid-auto-rows: 270px;
+	grid-template-columns: repeat(4, 1fr);
 	grid-gap: 20px;
 	padding: 25px;
 }
