@@ -4,7 +4,7 @@ import './ButtonPage.css';
 export default function ButtonPage({pages, handleClick, currentPage, minPageNumberLimit, maxPageNumberLimit, handleNext, handlePrev}){
 	return(
 		<ul className='pageButtons'>
-			<li>
+			<li className='btnLi'>
 				<button 
 					className='btn' 
 					onClick={handlePrev}
@@ -19,7 +19,7 @@ export default function ButtonPage({pages, handleClick, currentPage, minPageNumb
 						key={number} 
 						id={number} 
 						onClick={handleClick}
-						className={currentPage === number ? 'activeButton' : null}
+						className={currentPage === number ? 'activeButton' : 'pageLi'}
 					>
 						{number}
 					</li>
@@ -29,7 +29,7 @@ export default function ButtonPage({pages, handleClick, currentPage, minPageNumb
 			else return null;
 			})}
 
-			<li>
+			<li className='btnLi'>
 				<button 
 					className='btn' 
 					onClick={handleNext}

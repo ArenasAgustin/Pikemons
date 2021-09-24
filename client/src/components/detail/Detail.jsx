@@ -4,6 +4,7 @@ import { getPokemonDetail } from '../../actions/pokemon';
 import NavBar from '../navbar/NavBar';
 import Loading from '../loading/Loading';
 import images from '../img/img';
+import './Detail.css';
 
 export default function Detail({ match }){
 	const dispatch = useDispatch();
@@ -21,60 +22,60 @@ export default function Detail({ match }){
 		<div>
 			<NavBar />
 			{sprite && types && name  && origin 
-				? <div>
-				    <div>
-				      	<img src={sprite} alt={`Sprite of ${name}`}/>
+				? <div className='detailBackground'>
+				    <div className='detailDivImg'>
+				      	<img src={sprite} alt={`Sprite of ${name}`} className='detailImg'/>
 		
 				      	<div>
 							{types.length === 1
-								? <img src={images[types[0]]} alt={`Type: ${types[0]}`}/>
+								? <img src={images[types[0]]} alt={`Type: ${types[0]}`} className='detailType'/>
 								: <div>
-									<img src={images[types[0]]} alt={`Type 1: ${types[0]}`}/>
-								  	<img src={images[types[1]]} alt={`Type 2: ${types[1]}`}/>
+									<img src={images[types[0]]} alt={`Type 1: ${types[0]}`} className='detailType'/>
+								  	<img src={images[types[1]]} alt={`Type 2: ${types[1]}`} className='detailType'/>
 								  </div>
 							}	
 						</div>
 			      	</div>
 		
-			      	<div>
-				      	<div>
-				      		<p>{`${name[0].toUpperCase()}${name.slice(1)}`}</p>
-				      		<p>{id}</p>
+			      	<div className='divDetail'>
+				      	<div className='opacityNormal divNameId'>
+				      		<p className='capitalizeText'>{name}</p>
+				      		<p className='divId'>{id}</p>
 				      	</div>
 				      	
-				      	<div>
-				      		<div>
-				      			<span>Hp: </span>
-				      			<progress max='255' value={hp}>{hp}</progress>
+				      	<div className='opacityNormal'>
+				      		<div className='divSStats'>
+				      			<div className='divSpanStats'><span>Hp:</span></div>
+				      			<progress max='255' value={hp} className='divPStats'>{hp}</progress>
 				      		</div>
 		
-				      		<div>
-				      			<span>Attack: </span>
-				      			<progress max='255' value={attack}>{attack}</progress>
+				      		<div className='divSStats'>
+				      			<div className='divSpanStats'><span>Attack:</span></div>
+				      			<progress max='255' value={attack} className='divPStats'>{attack}</progress>
 				      		</div>
 		
-				      		<div>
-				      			<span>Defense: </span>
-				      			<progress max='255' value={defense}>{defense}</progress>
+				      		<div className='divSStats'>
+				      			<div className='divSpanStats'><span>Defense: </span></div>
+				      			<progress max='255' value={defense} className='divPStats'>{defense}</progress>
 				      		</div>
 		
-				      		<div>
-				      			<span>Special Attack: </span>
-				      			<progress max='255' value={special_attack}>{special_attack}</progress>
+				      		<div className='divSStats'>
+				      			<div className='divSpanStats'><span>Special Attack:</span></div>
+				      			<progress max='255' value={special_attack} className='divPStats'>{special_attack}</progress>
 				      		</div>
 		
-				      		<div>
-				      			<span>Special Defense: </span>
-				      			<progress max='255' value={special_defense}>{special_defense}</progress>
+				      		<div className='divSStats'>
+				      			<div className='divSpanStats'><span>Special Defense:</span></div>
+				      			<progress max='255' value={special_defense} className='divPStats'>{special_defense}</progress>
 				      		</div>
 		
-				      		<div>
-				      			<span>Speed: </span>
-				      			<progress max='255' value={speed}>{speed}</progress>
+				      		<div className='divSStats'>
+				      			<div className='divSpanStats'><span>Speed:</span></div>
+				      			<progress max='255' value={speed} className='divPStats'>{speed}</progress>
 				      		</div>
 				      	</div>
 		
-				      	<div>
+				      	<div className='opacityNormal'>
 				      		<p>{`Height: ${height}`}</p>
 				      		<p>{`Weight: ${weight}`}</p>
 				      	</div>

@@ -12,21 +12,21 @@ const NavBar = () => {
       </div>
 
       <div className='navContainerButtons'>
-        <div className='navDivButtons'>
+        <div className='navDivButtons homeButton'>
           <Link to='/home' className='navButtons'>
-            <h2>Home</h2> 
+            <h2 className='navBtns'>Home</h2> 
           </Link>
         </div>
 
-        <div className='navDivButtons'>
+        <div className='navDivButtons searchButton'>
           <Link to='/search' className='navButtons'>
-            <h2>Search</h2> 
+            <h2 className='navBtns'>Search</h2> 
           </Link>
         </div>
 
-        <div className='navDivButtons'>
+        <div className='navDivButtons createButton'>
           <Link to='/create' className='navButtons'>
-            <h2>Create Pokemon</h2> 
+            <h2 className='navBtns'>Create Pokemon</h2> 
           </Link>
         </div>
       </div> 

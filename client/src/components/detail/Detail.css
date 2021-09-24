@@ -1,0 +1,101 @@
+.detailBackground{
+	background-image: url('https://media.redadn.es/imagenes/animanga-1_307903.jpg');
+	background-size: contain;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+  	align-content: center;
+  	width: calc(100vw - 10px);
+  	height: calc(41vw - 1px);
+  	padding: 10px 5px;
+  	box-shadow: #52616B -1px 3px 10px 0px inset;
+  	color: #313131;
+}
+
+.detailDivImg{
+	width: calc(50vw - 20px);
+}
+
+.detailImg{
+	width: 460px;
+}
+
+.detailType{
+	width: 95px;
+	margin: 0px 15px;
+}
+
+.divDetail{
+	background-color: #f6f6f6;
+	font-size: 20px;
+	width: calc(50vw - 20px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+  	align-content: center;
+  	opacity: 0.95;
+  	border-radius: 30px;
+}
+
+.divNameId{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+  	align-content: center;
+}
+
+.divId{
+	margin: 20px;
+}
+
+.divSpanStats{
+	margin: 11px;
+}
+
+.divPStats{
+	margin: 17px;
+	margin-right: 23%;
+	background-color: #323232;
+	border: 0;
+	border-radius: 12px;
+	opacity: 1;
+}
+
+.divPStats::-webkit-progress-bar {
+	background-color: #323232;
+	border-radius: 12px;
+	opacity: 1;
+}
+
+.divPStats::-webkit-progress-value {
+	background: #F7D221;
+	background: -moz-linear-gradient(top,  #F7D221 10%, #E2A82D 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,#F7D221), color-stop(100%,#E2A82D));
+	background: -webkit-linear-gradient(top,  #F7D221 10%,#E2A82D 100%);
+	background: -o-linear-gradient(top,  #F7D221 10%,#E2A82D 100%);
+	background: -ms-linear-gradient(top,  #F7D221 10%,#E2A82D 100%);
+	background: linear-gradient(to bottom,  #F7D221 10%,#E2A82D 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F7D221', endColorstr='#E2A82D',GradientType=0 );
+	border-radius: 12px;
+	opacity: 1;
+}
+
+.divPStats::-moz-progress-bar {
+	background: #F7D221;
+	background: -moz-linear-gradient(top,  #F7D221 10%, #E2A82D 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,#F7D221), color-stop(100%,#E2A82D));
+	background: -webkit-linear-gradient(top,  #F7D221 10%,#E2A82D 100%);
+	background: -o-linear-gradient(top,  #F7D221 10%,#E2A82D 100%);
+	background: -ms-linear-gradient(top,  #F7D221 10%,#E2A82D 100%);
+	background: linear-gradient(to bottom,  #F7D221 10%,#E2A82D 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F7D221', endColorstr='#E2A82D',GradientType=0 );
+	border-radius: 12px;
+	opacity: 1;
+}
+
+.divSStats{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+  	align-content: center;
+}

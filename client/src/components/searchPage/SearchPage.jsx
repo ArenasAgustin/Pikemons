@@ -4,6 +4,7 @@ import NavBar from '../navbar/NavBar';
 import Cards from '../cards/Cards';
 import Pages from '../pages/Pages';
 import SearchBar from '../searchBar/SearchBar';
+import './SearchPage.css';
 
 export default function SearchPage(){
 	const pokeArray = useSelector(state => state.pokemonSearch);
@@ -16,8 +17,10 @@ export default function SearchPage(){
 	return(
 		<div>
 			<NavBar />
-			<SearchBar/>
-			<Cards pokeArrCards={pokeArray}/>
+			<div className='searchPageBack'>
+				<SearchBar/>
+				<Cards pokeArrCards={[...pokeArray].slice(0, 12)}/>
+			</div>
 		</div>
 	)
 }

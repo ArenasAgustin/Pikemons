@@ -1,5 +1,4 @@
 import { Route } from 'react-router-dom';
-import './App.css';
 import Detail from './components/detail/Detail';
 import Home from './components/home/Home';
 import Landing from './components/landing/Landing';
@@ -9,7 +8,7 @@ import Loading from './components/loading/Loading';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Route exact path='/' component={Landing}/>
 
       <Route exact path='/home' component={Home}/>

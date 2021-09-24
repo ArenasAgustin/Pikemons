@@ -7,13 +7,13 @@ function Card({id, sprite, types, name, origin}){
 	return(
 		<div className='card'>
 			<div className='backgroundPoke'>
-				<p className='idPoke'>{`${id} ${origin[0].toUpperCase()}`}</p>
+				<p className='idPoke'>{`#${id}${origin[0].toUpperCase()}`}</p>
 				<img src={sprite} alt={`Sprite of ${name}`} className='imgPoke'/>
 			</div>
 
 			<div className='cardDescription'>
 				<Link to={`/pokemon/${id}/${origin}`} className='namePoke'>
-					<p>{`${name[0].toUpperCase()}${name.slice(1)}`}</p>
+					<p className='capitalizeText'>{name}</p>
 				</Link>
 				
 				<div className='divTypeImg'>

@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { filterType } from '../../actions/pokemon';
 import Pages from '../pages/Pages';
 import Loading from '../loading/Loading';
+import './Filter.css';
 
 const arrTypes = ['all', 'bug', 'dark', 'dragon', 'electric', 'fairy', 'fighting', 'fire', 'flying', 'ghost', 'grass', 'ground', 'ice', 'normal', 'poison', 'psychic', 'rock', 'steel', 'water'];
 const arrOrder = ['default', 'a-Z', 'z-A', 'highest_Attack', 'highest_Defense', 'highest_Special_Attack', 'highest_Special_Defense', 'highest_Speed', 'highest_Height', 'highest_Weight'];
@@ -10,6 +11,7 @@ const arrOrder = ['default', 'a-Z', 'z-A', 'highest_Attack', 'highest_Defense', 
 export default function Filter(){
 	const pokeArray = useSelector(state => state.pokemonsArray);
 	const [pokemonsFilter, setPokemonsFilter] = useState(pokeArray);
+	const [filterFomr, setFilterForm] = useState(false);
 
 	useEffect(() => {
 		filterType(pokemonsFilter);
@@ -29,26 +31,37 @@ export default function Filter(){
 		console.log(pokemonsFilter)
 	}
 
+	const handleFilters = () => {
+		setFilterForm(!filterFomr);
+	}
+
 	return(
-		<div>
+		<div className='home'>
 			<div>
-				<select name='filterTypes' onChange={handleFilterTypes}>
-					{arrTypes.map(type => 
-						<option value={type} key={type}>{`${type[0].toUpperCase()}${type.slice(1)}`}</option>
-					)}
-				</select>
+				{filterFomr 
+					? <div className='filterBackground'>
+						<select name='filterTypes' onChange={handleFilterTypes} className='capitalizeText selectFilter'>
+							{arrTypes.map(type => 
+								<option value={type} key={type}>{type}</option>
+							)}
+						</select>
 
-				<select name='filterOrigin'>
-					<option value='default'> Default </option>
-					<option value='api'> Api </option>
-					<option value='db'> Fandom </option>
-				</select>
+						<select name='filterOrigin' className='selectFilter'>
+							<option value='default'> Default </option>
+							<option value='api'> Api </option>
+							<option value='db'> Fandom </option>
+						</select>
 
-				<select name='order'>
-					{arrOrder.map(order => 
-						<option value={order} key={order}>{`${order[0].toUpperCase()}${order.slice(1).replaceAll('_', ' ')}`}</option>
-					)}
-				</select>
+						<select name='order' className='capitalizeText selectFilter'>
+							{arrOrder.map(order => 
+								<option value={order} key={order}>{order.replaceAll('_', ' ')}</option>
+							)}
+						</select>
+					</div>
+
+					:null
+				}
+				<button onClick={handleFilters} className='filterButton'>Filters</button>
 
 				{pokeArray.length
 					? <Pages pokeArray={pokeArray}/>

@@ -1,0 +1,46 @@
+.createBackground{
+	background-image: url('https://media.redadn.es/imagenes/animanga-1_307903.jpg');
+	background-size: contain;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+  	align-content: center;
+  	width: calc(100vw - 10px);
+  	height: calc(41vw - 1px);
+  	padding: 10px 5px;
+  	box-shadow: #52616B -1px 3px 10px 0px inset;
+  	color: #313131;
+}
+
+.createDivImg{
+	width: calc(50vw - 20px);
+}
+
+.createImg{
+	width: 460px;
+}
+
+.divCreate{
+	background-color: #f6f6f6;
+	font-size: 20px;
+	width: calc(50vw - 20px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+  	align-content: center;
+  	opacity: 0.95;
+  	border-radius: 30px;
+}
+
+.divCreateTypes{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+  	align-content: center;
+}
+
+.inputCreate{
+	background: transparent;
+	border:  1px solid #313131;
+	width: 200px;
+}

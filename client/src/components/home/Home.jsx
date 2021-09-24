@@ -14,7 +14,7 @@ export default function Home(){
 	}, [dispatch])
 
 	return(
-		<div className='home'>
+		<div>
 			<NavBar />
 			<Filter />
 		</div>
