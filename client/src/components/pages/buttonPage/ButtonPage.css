@@ -47,3 +47,9 @@
 	outline: none;
 	color: #f6f6f6;
 }
+
+.bottomLi{
+	position: absolute;
+	left: 20px;
+  	bottom: 30px;
+}

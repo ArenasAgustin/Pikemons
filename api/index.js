@@ -48,13 +48,6 @@ conn.sync({ force: true }).then(() => {
     ]
 
     const modelArrTypes = arrTypes.map(type => Type.create({name: type}))
-    // //Creo 2 tipos para Tests
-    // var type1 = Type.create({
-    //   name: 'fire'
-    // })
-    // var type2 = Type.create({
-    //   name: 'dragon'
-    // })
 
     Promise.all(modelArrTypes) //
       .then(res => {

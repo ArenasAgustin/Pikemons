@@ -1,0 +1,58 @@
+.imgLandingBack{
+	background-image: url('https://free4kwallpapers.com/uploads/wallpaper/created-a-3d-render-of-a-pokemon-trophy-in-the-grass-wallpaper-1024x768-wallpaper.jpg');
+	background-size: cover;
+}
+
+.landingBackground{
+	width: 100vw;
+	height: 545px;
+	box-shadow: #52616B -1px 3px 10px 0px  inset;
+}
+
+.landingImg{
+	left: 0px;
+  	bottom: 0px;
+	position: absolute;
+	width: 100%;
+	z-index: 1;
+}
+
+.landingDivBtn{
+	background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/f720bb6e-b303-4877-bffb-d61df0ab183f/d3b98cf-4fc5c76b-2a99-47fc-98b6-d7d4ee8d9d9f.png/v1/fill/w_256,h_256,q_75,strp/pokeball_desktop_icon_by_beccerberry-d3b98cf.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl0sIm9iaiI6W1t7InBhdGgiOiIvaS9mNzIwYmI2ZS1iMzAzLTQ4NzctYmZmYi1kNjFkZjBhYjE4M2YvZDNiOThjZi00ZmM1Yzc2Yi0yYTk5LTQ3ZmMtOThiNi1kN2Q0ZWU4ZDlkOWYucG5nIiwid2lkdGgiOiI8PTI1NiIsImhlaWdodCI6Ijw9MjU2In1dXX0.E4UIkYYglmei_cE2crKjE0lIwf81zephW1R1k6Xwglo');
+	background-size: cover;
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+	position: absolute;
+	z-index: 2;
+	left: 150px;
+	top: 200px;
+}
+
+.landingBtn{
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+	text-decoration: none;
+	color: #f6f6f6;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+  	align-content: center;
+  	font-size: 19px;
+}
+
+.landingLink{
+	border-radius: 100px;
+	text-decoration: none;
+}
+
+.fakeNavBar{
+	width: 100vw;
+	background-color: #f6f6f6;
+}
+
+.imgLogo{
+	height: 70px;
+	margin: 5px 0px;
+}

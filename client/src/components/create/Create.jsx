@@ -60,12 +60,12 @@ export default function  Create() {
 
       <div className='createBackground'>
         <div className='createDivImg'>
-          <img src='' alt='Teacher Oak' className='createImg'/>
+          <img src='https://images.wikidexcdn.net/mwuploads/wikidex/f/f8/latest/20180820010545/Profesor_Oak_LGPE.png' alt='Teacher Oak' className='createImg'/>
         </div>
 
         <form onSubmit={e => handleSubmit(e)} className='divCreate'>
-          <div>
-              <label>Name:</label>
+          <div className='divInputCreate'>
+              <label className='labelInput'>Name:</label>
               <input 
                 type='text' name='name' onChange={handleInputChange} value={input.name} placeholder='Name of Pokemon' className='inputCreate'/>
               {errors.name && (
@@ -73,8 +73,8 @@ export default function  Create() {
               )}
           </div>
 
-          <div>
-              <label>Sprite:</label>
+          <div className='divInputCreate'>
+              <label className='labelInput'>Sprite:</label>
               <input
                 type='url' name='sprite' onChange={handleInputChange} value={input.sprite} placeholder='Sprite of Pokemon' className='inputCreate'/>
               {errors.sprite && (
@@ -82,8 +82,8 @@ export default function  Create() {
               )}
           </div>
           
-          <div>
-              <label>Hp:</label>
+          <div className='divInputCreate'>
+              <label className='labelInput'>Hp:</label>
               <input
                 type='number' name='hp' onChange={handleInputChange} value={input.hp} placeholder='Hp of Pokemon' className='inputCreate'/>
               {errors.hp && (
@@ -91,8 +91,8 @@ export default function  Create() {
               )}
           </div>
 
-          <div>
-              <label>Attack:</label>
+          <div className='divInputCreate'>
+              <label className='labelInput'>Attack:</label>
               <input
                 type='number' name='attack' onChange={handleInputChange} value={input.attack} placeholder='Attack of Pokemon' className='inputCreate'/>
               {errors.attack && (
@@ -100,8 +100,8 @@ export default function  Create() {
               )}
           </div>
 
-          <div>
-              <label>Defense:</label>
+          <div className='divInputCreate'>
+              <label className='labelInput'>Defense:</label>
               <input
                 type='number' name='defense' onChange={handleInputChange} value={input.defense} placeholder='Defense of Pokemon' className='inputCreate'/>
               {errors.defense && (
@@ -109,8 +109,8 @@ export default function  Create() {
               )}
           </div>
 
-          <div>
-              <label>Special Attack:</label>
+          <div className='divInputCreate'>
+              <label className='labelInput'>Special Attack:</label>
               <input
                 type='number' name='special_attack' onChange={handleInputChange} value={input.special_attack} placeholder='Special Attack of Pokemon' className='inputCreate'/>
               {errors.special_attack && (
@@ -118,8 +118,8 @@ export default function  Create() {
               )}
           </div>
 
-          <div>
-              <label>Special Defense:</label>
+          <div className='divInputCreate'>
+              <label className='labelInput'>Special Defense:</label>
               <input
                 type='number' name='special_defense' onChange={handleInputChange} value={input.special_defense} placeholder='Special Defense of Pokemon' className='inputCreate'/>
               {errors.special_defense && (
@@ -127,8 +127,8 @@ export default function  Create() {
               )}
           </div>
 
-          <div>
-              <label>Speed:</label>
+          <div className='divInputCreate'>
+              <label className='labelInput'>Speed:</label>
               <input
                 type='number' name='speed' onChange={handleInputChange} value={input.speed} placeholder='Speed of Pokemon' className='inputCreate'/>
               {errors.speed && (
@@ -136,8 +136,8 @@ export default function  Create() {
               )}
           </div>
 
-          <div>
-              <label>Height:</label>
+          <div className='divInputCreate'>
+              <label className='labelInput'>Height:</label>
               <input
                 type='number' name='height' onChange={handleInputChange} value={input.height} placeholder='Height of Pokemon' className='inputCreate'/>
               {errors.height && (
@@ -145,8 +145,8 @@ export default function  Create() {
               )}
           </div>
 
-          <div>
-              <label>Weight:</label>
+          <div className='divInputCreate'>
+              <label className='labelInput'>Weight:</label>
               <input
                 type='number' name='weight' onChange={handleInputChange} value={input.weight} placeholder='Weight of Pokemon' className='inputCreate'/>
               {errors.weight && (
@@ -155,20 +155,20 @@ export default function  Create() {
           </div>
 
           <div className='divCreateTypes'>
-            <select name='type1' onChange={handleInputChange} className='capitalizeText'>
+            <select name='type1' onChange={handleInputChange} className='capitalizeText selectType'>
               {arrTypes.map(type => 
-                <option value={type} key={type}>{type}</option>
+                <option value={type} key={type} className='capitalizeText'>{type}</option>
               )}
             </select>
 
-            <select name='type2' onChange={handleInputChange} className='capitalizeText'>
+            <select name='type2' onChange={handleInputChange} className='capitalizeText selectType'>
               {arrTypes.map(type => 
-                <option value={type} key={type}>{type}</option>
+                <option value={type} key={type} className='capitalizeText'>{type}</option>
               )}
             </select>
           </div>
 
-          {input.name && (input.type1 || input.type2) && <button type='submit'> Create </button>}
+          {input.name && (input.type1 || input.type2) && <button type='submit' className='btnCreate'> Create </button>}
         </form>
       </div>
     </div>

@@ -1,6 +1,6 @@
 .createBackground{
-	background-image: url('https://media.redadn.es/imagenes/animanga-1_307903.jpg');
-	background-size: contain;
+	background-image: url('https://3.bp.blogspot.com/-8OBE7UfGie8/U9KGHYE2JzI/AAAAAAAABuw/za0_UzzM6xY/s1600/Prof_Juniper_Lab_anime.png');
+	background-size: cover;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -17,7 +17,9 @@
 }
 
 .createImg{
-	width: 460px;
+	max-width: 460px;
+	max-height: 460px;
+	margin-top: 50px;
 }
 
 .divCreate{
@@ -43,4 +45,55 @@
 	background: transparent;
 	border:  1px solid #313131;
 	width: 200px;
+	margin: 10px;
+	margin-right: 24%;
+	background: #f6f6f6;
+	font-size: 15px;
+	padding: 2px;
+	border-radius: 9px;
+}
+
+.divInputCreate{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+  	align-content: center;
+}
+
+.labelInput{
+	margin: 5px;
+}
+
+.selectType{
+	margin: 5px 15px;
+	background: #f6f6f6;
+	border: 1px solid #313131;
+	font-size: 15px;
+	padding: 2px;
+	width: 150px;
+	border-radius: 9px;
+	cursor: pointer;
+}
+
+.btnCreate{
+	background-color: transparent;
+	border: 1px solid #313131;
+	font-size: 15px;
+	cursor: pointer;
+	width: 100px;
+	height: 30px;
+	border-radius: 9px;
+	font-weight: 600;
+	align-self: center;
+	margin: 5px;
+}
+
+.btnCreate:hover{
+	background-color: #313131;
+	color: #f6f6f6;
+}
+
+.btnCreate:focus{
+	outline: none;
+	color: #f6f6f6;
 }
