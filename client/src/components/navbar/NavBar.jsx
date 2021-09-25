@@ -7,7 +7,11 @@ const NavBar = () => {
     <nav className='navContainer'>
       <div>
         <Link to='/'>
-          <img src='https://fontmeme.com/permalink/210920/2236f4bb095596eb7570e41e89d19354.png' alt='Pikémon'  className='navImg'/>
+          <img 
+            src='https://fontmeme.com/permalink/210920/2236f4bb095596eb7570e41e89d19354.png' 
+            alt='Pikémon' 
+            className='navImg'
+          />
         </Link>
       </div>
 

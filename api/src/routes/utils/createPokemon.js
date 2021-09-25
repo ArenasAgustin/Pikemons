@@ -2,7 +2,17 @@ const { Pokemon, Type } = require('../../db.js');
 
 const createPokemon = async (req, res) => {
 	const { 
-		name, types, hp, attack, defense, special_attack, special_defense, speed, height, weight, sprite 
+		name, 
+		types, 
+		hp, 
+		attack, 
+		defense, 
+		special_attack, 
+		special_defense, 
+		speed, 
+		height, 
+		weight, 
+		sprite 
 	} = req.body;
 
 	try {
@@ -11,7 +21,16 @@ const createPokemon = async (req, res) => {
 
 		//Creo el poke
 		const poke = await Pokemon.create({
-			name, hp, attack, defense, special_attack, special_defense, speed, height, weight, sprite
+			name, 
+			hp, 
+			attack, 
+			defense, 
+			special_attack, 
+			special_defense, 
+			speed, 
+			height, 
+			weight, 
+			sprite
 		})
 
 		await poke.setTypes(typesArr);

@@ -19,6 +19,8 @@ const getDBPokemon = async () => {
 				name: resultsPokesDB[i].name,
 				id: resultsPokesDB[i].id,
 				sprite: resultsPokesDB[i].sprite,
+				attack: resultsPokesDB[i].attack,
+				defense: resultsPokesDB[i].defense,
 				origin: "db"
 			}
 

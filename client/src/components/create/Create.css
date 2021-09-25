@@ -46,7 +46,7 @@
 	border:  1px solid #313131;
 	width: 200px;
 	margin: 10px;
-	margin-right: 24%;
+	margin-right: 23%;
 	background: #f6f6f6;
 	font-size: 15px;
 	padding: 2px;
@@ -61,7 +61,7 @@
 }
 
 .labelInput{
-	margin: 5px;
+	margin: 8px;
 }
 
 .selectType{

@@ -5,7 +5,26 @@ import NavBar from '../navbar/NavBar';
 import validate from './utils/validate';
 import './Create.css'
 
-const arrTypes = [ 'bug', 'dark', 'dragon', 'electric', 'fairy', 'fighting', 'fire', 'flying', 'ghost', 'grass', 'ground', 'ice', 'normal', 'poison', 'psychic', 'rock', 'steel', 'water'];
+const arrTypes = [ 
+  'bug', 
+  'dark', 
+  'dragon', 
+  'electric', 
+  'fairy', 
+  'fighting', 
+  'fire', 
+  'flying', 
+  'ghost', 
+  'grass', 
+  'ground', 
+  'ice', 
+  'normal', 
+  'poison', 
+  'psychic', 
+  'rock', 
+  'steel', 
+  'water'
+];
 
 export default function  Create() {
   const dispatch = useDispatch();
@@ -25,12 +44,14 @@ export default function  Create() {
   })
   const [errors, setErrors] = React.useState({});
 
+  //Funcion para obtener los valores
   const handleInputChange = event => {
     setInput((prev) => ({...prev, [event.target.name]: event.target.value}));
 
     setErrors(validate({...input, [event.target.name]: event.target.value}));
   }
 
+  //Funcion para agregar el poke
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(addPokemon(input));

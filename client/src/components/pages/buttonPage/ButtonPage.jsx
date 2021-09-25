@@ -1,7 +1,15 @@
 import React from 'react';
 import './ButtonPage.css';
 
-export default function ButtonPage({pages, handleClick, currentPage, minPageNumberLimit, maxPageNumberLimit, handleNext, handlePrev,}){
+export default function ButtonPage({
+	pages, 
+	handleClick, 
+	currentPage, 
+	minPageNumberLimit, 
+	maxPageNumberLimit, 
+	handleNext, 
+	handlePrev,
+}){
 	return(
 		<ul className='pageButtons'>
 			<li className='btnLi'>

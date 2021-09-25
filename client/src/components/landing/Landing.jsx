@@ -6,7 +6,11 @@ export default function Landing(){
 	return(
 		<div className='imgLandingBack'>
 			<div className='fakeNavBar'>
-				<img src='https://fontmeme.com/permalink/210920/2236f4bb095596eb7570e41e89d19354.png' alt='Pikémon' className='imgLogo'/>
+				<img 
+					src='https://fontmeme.com/permalink/210920/2236f4bb095596eb7570e41e89d19354.png' 
+					alt='Pikémon' 
+					className='imgLogo'
+				/>
 			</div>
 
 			<div className='landingBackground'>
