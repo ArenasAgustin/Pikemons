@@ -50,3 +50,26 @@ describe('Pokemon routes', () => {
     );
   });
 });
+
+
+xdescribe('Type routes', () => {;
+
+  describe('GET /pokemons', () => {
+
+    it('Should throw an error if name is null', done => {
+      Type.create({})
+        .then(() => done(new Error('It requires a valid name')))
+        .catch(() => done());
+    });
+
+    it('Should throw an error if name is repeated', done => {
+      Type.create({name: 'fire'})
+        .then(() => done(new Error('It requires a valid name')))
+        .catch(() => done());
+    });
+
+    it('Should work when its a valid name', () => {
+      Type.create({ name: 'Agustype' });
+    });
+  })
+});
