@@ -35,7 +35,7 @@ const createPokemon = async (req, res) => {
 
 		await poke.setTypes(typesArr);
 
-		res.send(poke);
+		res.status(200).send(poke);
 	}
 
 	catch(error) {

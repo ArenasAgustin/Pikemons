@@ -36,7 +36,7 @@ const getByID = async (req, res) => {
 				else pokeDB.types = [auxPokeDB.types[0].name, auxPokeDB.types[1].name];
 				console.log(pokeDB)
 
-				return res.send(pokeDB);
+				return res.status(200).send(pokeDB);
 			}
 		}
 
@@ -67,12 +67,12 @@ const getByID = async (req, res) => {
 			return res.send(pokeApi);
 		}
 
-		else return res.send(null);
+		else return res.status(404).send(new Error('Pokemon not found'));
 	}
 	
 	catch(error) {
 		console.log(error)
-		res.status(501).send(error);
+		res.status(404).send(error);
 	}
 }
 

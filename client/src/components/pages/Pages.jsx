@@ -5,7 +5,7 @@ import ButtonPage from './buttonPage/ButtonPage';
 import Filter from '../filter/Filter';
 import Loading from '../loading/Loading';
 
-export default function Pages() {
+export default function Pages(){
 	//Arrays de pokes
 	const pokeArray = useSelector(state => state.pokemonsArray);
 	const [pokeArrPages, setPokeArrPages] = useState([]);

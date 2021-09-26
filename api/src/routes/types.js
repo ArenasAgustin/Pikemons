@@ -7,7 +7,7 @@ router.post('/', async (req, res) => {
 	try {
 		const type = await Type.create({name});
 
-		res.send(type);
+		res.status(200).send(type);
 	}
 
 	catch(error) {
@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
 	try {
 		const types = await Type.findAll();
 
-		res.send(types);
+		res.status(200).send(types);
 	}
 
 	catch(error) {

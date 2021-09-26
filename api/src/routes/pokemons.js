@@ -10,7 +10,7 @@ router.post('/addpokemon', createPokemon);
 //Busco todos los pokes creados
 router.get('/news', async (req, res) => {
 	try {
-		res.send(await getDBPokemon());
+		res.status(200).send(await getDBPokemon());
 	}
 	catch (e) {
 		res.status(501).send(error);
@@ -20,10 +20,10 @@ router.get('/news', async (req, res) => {
 //Busco todos los pokes de la api
 router.get('/api', async (req, res) => {
 	try {
-		res.send(await getApiPokemon());
+		res.status(200).send(await getApiPokemon());
 	}
 	catch (e) {
-		res.status(501).send(error);
+		res.status(404).send(error);
 	}
 });
 

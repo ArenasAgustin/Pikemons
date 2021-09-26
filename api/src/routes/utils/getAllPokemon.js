@@ -6,7 +6,7 @@ const getAllPokemon = async (req, res) => {
 		let resultsPokesApi = await getApiPokemon();
 		let resultsPokesDB = await getDBPokemon();
 		
-		res.send([...resultsPokesApi, ...resultsPokesDB]); //allPokemons
+		res.status(200).send([...resultsPokesApi, ...resultsPokesDB]); //allPokemons
 	}
 
 	catch(error) {

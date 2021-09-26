@@ -25,7 +25,7 @@ const getByName = async (req, res) => {
 
 			else pokeDB.types = [auxPokeDB.types[0].name, auxPokeDB.types[1].name];
 
-			return res.send(pokeDB);
+			return res.status(200).send(pokeDB);
 		}
 
 		else if(!auxPokeDB){
@@ -44,14 +44,14 @@ const getByName = async (req, res) => {
 
 			else pokeApi.types = [auxPokeApi.data.types[0].type.name, auxPokeApi.data.types[1].type.name];
 
-			return res.send(pokeApi);
+			return res.status(200).send(pokeApi);
 		}
 
-		else return res.send(null);
+		else return res.status(404).send(new Error('Pokemon not found'));
 	}
 	
 	catch(error) {
-		res.status(501).send(error);
+		res.status(404).send(null);
 	}
 }
 
