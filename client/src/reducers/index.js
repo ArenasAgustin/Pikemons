@@ -29,10 +29,13 @@ export const rootReducer = (state = initialState, {type, payload}) => {
 				pokemonDetail: payload
 			};
 		case GET_POKEMON_SEARCH:
-			return{
-				...state,
-				pokemonSearch: [payload, ...state.pokemonSearch]
-			};
+			let pokeSearched = state.pokemonSearch.find(poke => poke.name === payload.name);
+
+			if(!pokeSearched) return{
+									...state,
+									pokemonSearch: [payload, ...state.pokemonSearch]
+								};
+			return state;
 		case GET_TYPES:
 			return {
 				...state,
