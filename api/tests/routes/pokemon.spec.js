@@ -54,7 +54,7 @@ describe('Pokemon routes', () => {
 
 xdescribe('Type routes', () => {;
 
-  describe('GET /pokemons', () => {
+  describe('GET /types', () => {
 
     it('Should throw an error if name is null', done => {
       Type.create({})
