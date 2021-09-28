@@ -5,6 +5,7 @@ import Landing from './components/landing/Landing';
 import Create from './components/create/Create';
 import SearchPage from './components/searchPage/SearchPage';
 import Loading from './components/loading/Loading';
+import ErrorPage from './components/errorPage/errorPage';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
       <Route exact path='/search' component={SearchPage}/>
 
       <Route exact path='/loading' component={Loading}/>
+
+      <Route exact path='/errorPage' component={ErrorPage}/>
     </div>
   );
 }

@@ -71,7 +71,6 @@ export default function  Create() {
   })
   }
   /*className={errors.username && 'danger'}*/
-  /*className="danger"*/
 
   return (
     <div>
@@ -86,92 +85,121 @@ export default function  Create() {
 
         <form onSubmit={e => handleSubmit(e)} className='divCreate'>
           <div className='divInputCreate'>
-              <label className='labelInput'>Name:</label>
-              <input 
+              <div>
+                <label className='labelInput'>Name:</label>
+                <input 
                 type='text' name='name' onChange={handleInputChange} value={input.name} placeholder='Name of Pokemon' className='inputCreate'/>
+              </div>
+              
               {errors.name && (
-                <p>{errors.name}</p>
+                <p className='errorInput'>{errors.name}</p>
               )}
           </div>
 
           <div className='divInputCreate'>
-              <label className='labelInput'>Sprite:</label>
-              <input
+              <div>
+                <label className='labelInput'>Sprite:</label>
+                <input
                 type='url' name='sprite' onChange={handleInputChange} value={input.sprite} placeholder='Sprite of Pokemon' className='inputCreate'/>
+              </div>
+
               {errors.sprite && (
-                <p>{errors.sprite}</p>
+                <p className='errorInput'>{errors.sprite}</p>
               )}
           </div>
           
           <div className='divInputCreate'>
+            <div>
               <label className='labelInput'>Hp:</label>
               <input
-                type='number' name='hp' onChange={handleInputChange} value={input.hp} placeholder='Hp of Pokemon' className='inputCreate'/>
+              type='number' name='hp' onChange={handleInputChange} value={input.hp} placeholder='Hp of Pokemon' className='inputCreate'/>            
+            </div>            
               {errors.hp && (
-                <p>{errors.hp}</p>
+                <p className='errorInput'>{errors.hp}</p>
               )}
           </div>
 
           <div className='divInputCreate'>
-              <label className='labelInput'>Attack:</label>
-              <input
+              <div>
+                <label className='labelInput'>Attack:</label>
+                <input
                 type='number' name='attack' onChange={handleInputChange} value={input.attack} placeholder='Attack of Pokemon' className='inputCreate'/>
+              </div>
+
               {errors.attack && (
-                <p>{errors.attack}</p>
+                <p className='errorInput'>{errors.attack}</p>
               )}
           </div>
 
           <div className='divInputCreate'>
-              <label className='labelInput'>Defense:</label>
-              <input
+              <div>
+                <label className='labelInput'>Defense:</label>
+                <input
                 type='number' name='defense' onChange={handleInputChange} value={input.defense} placeholder='Defense of Pokemon' className='inputCreate'/>
+              </div>
+
               {errors.defense && (
-                <p>{errors.defense}</p>
+                <p className='errorInput'>{errors.defense}</p>
               )}
           </div>
 
           <div className='divInputCreate'>
-              <label className='labelInput'>Special Attack:</label>
-              <input
+              <div>
+                <label className='labelInput'>Special Attack:</label>
+                <input
                 type='number' name='special_attack' onChange={handleInputChange} value={input.special_attack} placeholder='Special Attack of Pokemon' className='inputCreate'/>
+              </div>
+
               {errors.special_attack && (
-                <p>{errors.special_attack}</p>
+                <p className='errorInput'>{errors.special_attack}</p>
               )}
           </div>
 
           <div className='divInputCreate'>
-              <label className='labelInput'>Special Defense:</label>
-              <input
+              <div>
+                <label className='labelInput'>Special Defense:</label>
+                <input
                 type='number' name='special_defense' onChange={handleInputChange} value={input.special_defense} placeholder='Special Defense of Pokemon' className='inputCreate'/>
+              </div>
+
               {errors.special_defense && (
-                <p>{errors.special_defense}</p>
+                <p className='errorInput'>{errors.special_defense}</p>
               )}
           </div>
 
           <div className='divInputCreate'>
-              <label className='labelInput'>Speed:</label>
-              <input
+              <div>
+                <label className='labelInput'>Speed:</label>
+                <input
                 type='number' name='speed' onChange={handleInputChange} value={input.speed} placeholder='Speed of Pokemon' className='inputCreate'/>
+              </div>
+
               {errors.speed && (
-                <p>{errors.speed}</p>
+                <p className='errorInput'>{errors.speed}</p>
               )}
           </div>
 
           <div className='divInputCreate'>
-              <label className='labelInput'>Height:</label>
-              <input
+              <div>
+                <label className='labelInput'>Height:</label>
+                <input
                 type='number' name='height' onChange={handleInputChange} value={input.height} placeholder='Height of Pokemon' className='inputCreate'/>
+              </div>
+
               {errors.height && (
-                <p>{errors.height}</p>
+                <p className='errorInput'>{errors.height}</p>
               )}
           </div>
 
           <div className='divInputCreate'>
-              <label className='labelInput'>Weight:</label>
-              <input
+              <div>
+                <label className='labelInput'>Weight:</label>
+                <input
                 type='number' name='weight' onChange={handleInputChange} value={input.weight} placeholder='Weight of Pokemon' className='inputCreate'/>
+              </div>
+
               {errors.weight && (
-                <p>{errors.weight}</p>
+                <p className='errorInput'>{errors.weight}</p>
               )}
           </div>
 

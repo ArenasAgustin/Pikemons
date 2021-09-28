@@ -1,0 +1,16 @@
+.divErr{
+	margin: 30px;
+	display: flex;
+	flex-direction: column;
+  	justify-content: center;
+  	align-content: center;
+}
+
+.errImg{
+	width: 400px;
+}
+
+.errText{
+	font-size: 40px;
+	color: #313131;
+}

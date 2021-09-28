@@ -53,7 +53,19 @@
 	border-radius: 9px;
 }
 
+.inputCreate:focus{
+	border:  1px solid #313131;
+	border-radius: 9px;
+}
+
 .divInputCreate{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+  	align-content: center;
+}
+
+.divInputCreate div{
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-end;
@@ -96,4 +108,11 @@
 .btnCreate:focus{
 	outline: none;
 	color: #f6f6f6;
+}
+
+.errorInput{
+	color: red;
+	font-size: 14px;
+	margin-top: 0px;
+	margin-bottom: 5px;
 }

@@ -6,6 +6,10 @@ export default function validate(input) {
     errors.name = 'Username is required';
   }
 
+  if(input.hp > 255){
+    errors.hp = 'Hp less than 255';
+  } 
+
   if(input.attack > 255){
     errors.attack = 'Attack less than 255';
   } 

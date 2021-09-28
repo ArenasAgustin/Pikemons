@@ -5,7 +5,7 @@
 	flex-direction: row;
 	justify-content: center;
   	align-content: center;
-  	width: calc(100vw - 10px);
+  	width: calc(100% - 10px);
   	height: calc(41vw - 1px);
   	padding: 10px 5px;
   	box-shadow: #52616B -1px 3px 10px 0px inset;
@@ -22,9 +22,17 @@
 	margin-top: 30px;
 }
 
+.detailImg:hover{
+  transform:scale(1.1);
+}
+
 .detailType{
 	width: 95px;
 	margin: 0px 15px;
+}
+
+.detailType:hover{
+  transform:scale(1.1);
 }
 
 .divDetail{

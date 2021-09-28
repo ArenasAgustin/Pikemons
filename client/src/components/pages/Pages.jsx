@@ -4,6 +4,7 @@ import Cards from '../cards/Cards';
 import ButtonPage from './buttonPage/ButtonPage';
 import Filter from '../filter/Filter';
 import Loading from '../loading/Loading';
+import ErrorPage from '../errorPage/errorPage';
 
 export default function Pages(){
 	//Arrays de pokes
@@ -15,9 +16,11 @@ export default function Pages(){
 	}, [pokeArray])
 
 	//Auxiliares de filtros
-	const [errorFilter, setErrorFilter] = useState(false); //Si no hay pokes del tipo o origen mostrar error
+	const [errorFilter, setErrorFilter] = useState(''); //Si no hay pokes del tipo o origen mostrar error
 	const [filterOriginUsed, setFilterOriginUsed] = useState('default');
-	const [copyOfArr, setCopyOfArr] = useState([]);
+	const [copyOfArrFilter, setCopyOfArrFilter] = useState([]);
+	const [filterArr, setFilterArr] = useState('default');
+	const [copyOfArrOrd, setCopyOfArrOrd] = useState([]);
 	const [orderArr, setOrderArr] = useState('default');
 
 	//Cantidad de cards
@@ -66,8 +69,10 @@ export default function Pages(){
 	//Funcion de filtrado de tipos
 	const handleFilterTypes = value => {
 		let arrAux = pokeArray;
+		setErrorFilter('');
 
 		if(value !== 'all') arrAux = arrAux.filter(poke => poke.types[0] === value || poke.types[1] === value);
+		if(!arrAux.length) setErrorFilter('There are no pokémons of that type');
 
 		setPokeArrPages(arrAux);
 		setOrderArr('default');
@@ -76,10 +81,17 @@ export default function Pages(){
 	//Funcion de filtrado por origen
 	const handleFilterOrigin = value => {
 		let arrAux = pokeArrPages;
+		setErrorFilter('');
+
+		if(filterArr === 'default') setCopyOfArrFilter(pokeArrPages);
 
 		if(value !== 'default') arrAux = arrAux.filter(poke => poke.origin === value);
+
 		if(!arrAux.length && value !== 'default') arrAux = [...pokeArray].filter(poke => poke.origin === value)
-		
+		if(!arrAux.length) setErrorFilter('There are no pokémons of this origin');
+
+		if(value === 'default') arrAux = copyOfArrFilter
+
 		setFilterOriginUsed(value);
 		setPokeArrPages(arrAux);
 		setOrderArr('default');
@@ -88,7 +100,7 @@ export default function Pages(){
 	const handleOrder = value => {
 		let arrAux = [];
 
-		if(orderArr === 'default') setCopyOfArr(pokeArrPages);
+		if(orderArr === 'default') setCopyOfArrOrd(pokeArrPages);
 
 		switch(value){
 			case 'a-Z':
@@ -153,7 +165,7 @@ export default function Pages(){
 
 			default:
 				setOrderArr('default');
-				setPokeArrPages(copyOfArr);
+				setPokeArrPages(copyOfArrOrd);
 				break;
 		}
 	}
@@ -178,7 +190,7 @@ export default function Pages(){
 
 			{pokesArr.length
 				? <Cards pokeArrCards = {pokesArr}/>
-				: <Loading />
+				: errorFilter ? <ErrorPage errMsg={errorFilter}/> : <Loading />
 			}
 
 			<ButtonPage 

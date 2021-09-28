@@ -14,7 +14,7 @@
 }
 
 .pageLi:hover{
-	background-color: #313131;
+	background-color: #52616B;
 	color: #f6f6f6;
 }
 
@@ -39,13 +39,23 @@
 }
 
 .btn:hover{
-	background-color: #313131;
+	background-color: #52616B;
 	color: #f6f6f6;
 }
 
 .btn:focus{
 	outline: none;
 	color: #f6f6f6;
+}
+
+.btn:disabled{
+	color: #f6f6f6;
+}
+
+.btn:disabled:hover{
+	background-color: transparent;
+	color: #f6f6f6;
+	cursor: no-drop;
 }
 
 .bottomLi{

@@ -6,6 +6,7 @@
 	padding: 2px;
 	width: 210px;
 	border-radius: 9px;
+	cursor: pointer;
 }
 
 .filterButton{
@@ -16,6 +17,7 @@
 	padding: 5px 10px;
 	font-weight: 700;
 	border-radius: 0px 0px 15px 15px;
+	cursor: pointer;
 }
 
 .filterBackground{

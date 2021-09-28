@@ -16,7 +16,7 @@ export default function ButtonPage({
 				<button 
 					className='btn' 
 					onClick={handlePrev}
-					disable={currentPage === pages[0] ? true : false}
+					disabled={currentPage === pages[0] ? true : false}
 				>Prev</button>
 			</li>
 
@@ -41,7 +41,7 @@ export default function ButtonPage({
 				<button 
 					className='btn' 
 					onClick={handleNext}
-					disable={currentPage === pages[pages.length - 1] ? true : false}
+					disabled={currentPage === pages[pages.length - 1] ? true : false}
 				>Next</button>
 			</li>
 		</ul>

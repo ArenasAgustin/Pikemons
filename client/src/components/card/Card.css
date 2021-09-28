@@ -4,6 +4,11 @@
 	border-radius: 15px;
 }
 
+.card:hover{
+  transform:scale(1.1);
+  box-shadow: 2px 3px 6px #313131;
+}
+
 .backgroundPoke{
 	background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapertag.com%2Fwallpaper%2Ffull%2F9%2F2%2Fa%2F572655-pokemon-forest-background-1920x1200-for-desktop.jpg&f=1&nofb=1');
 	background-size: cover;
