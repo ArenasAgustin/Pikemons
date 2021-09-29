@@ -29,6 +29,10 @@
 	top: 200px;
 }
 
+.landingDivBtn:hover{
+  transform:scale(1.1);
+}
+
 .landingBtn{
 	width: 200px;
 	height: 200px;
